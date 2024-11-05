@@ -37,7 +37,6 @@ const Index = () => {
                 className="flex-grow" />
           </div>
           <main className="flex-grow bg-gray-50 flex flex-col">
-            {console.log(lineselected, moduleUsed)}
             {lineselected && moduleUsed !== 0 
               ? (
                 <ContainerSteps 
