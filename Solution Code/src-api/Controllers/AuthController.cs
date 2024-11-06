@@ -27,11 +27,11 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("[action]")]
-    public async Task<IActionResult> Login([Required] string base64Username, [Required] string base64Password, string? serverid)
+    public async Task<IActionResult> Login([Required] string base64Username, [Required] string base64Password, int serverid)
     {
         try
         {
-            if (string.IsNullOrEmpty(serverid))
+            if (serverid == 0)
             {
                 if (!string.IsNullOrEmpty(base64Username) && !string.IsNullOrEmpty(base64Password))
                 {

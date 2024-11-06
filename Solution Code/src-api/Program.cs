@@ -26,7 +26,15 @@ builder.Services.AddDbContext<SiteDBContext>(
 );
 
 builder.Services.AddLogging(config => config.AddLog4Net());
-builder.Services.AddScoped<IAuthHelper, AuthHelper>();
+builder.Services.AddScoped<IAuthHelper, AuthHelper>((sp =>
+{
+    var centralContext = sp.GetRequiredService<CentralDBContext>();
+    var siteContext = sp.GetRequiredService<SiteDBContext>();
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    var logger = sp.GetRequiredService<ILogger<AuthHelper>>();
+    bool superadmin = configuration.GetValue<bool>("SuperAdmin");
+    return new AuthHelper(centralContext, siteContext, configuration, logger, superadmin);
+}));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -62,6 +70,7 @@ app.UseWhen(context => !context.Request.Path.StartsWithSegments("/Auth/Login"),
     {
         configuration.UseMiddleware<AuthorizationMiddleware>();
     });
+
 //app.Use(async (context, next) =>
 //{
 //    // Check if the token is present in the request headers

@@ -1,26 +1,16 @@
 ﻿using Contexts;
 using DTOs;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration.UserSecrets;
 using Microsoft.IdentityModel.Tokens;
 using Models;
-using src_api.Utilities;
 using System.DirectoryServices.Protocols;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Net;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Data.SqlClient;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.SqlServer;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 
 namespace src_api.Utilities
 {
@@ -30,13 +20,15 @@ namespace src_api.Utilities
         private readonly SiteDBContext _siteContext;
         private readonly IConfiguration _configuration;
         private ILogger _logger;
+        private bool _superadmin;
 
-        public AuthHelper(CentralDBContext centralContext, SiteDBContext siteContext, IConfiguration configuration, ILogger<AuthHelper> logger)
+        public AuthHelper(CentralDBContext centralContext, SiteDBContext siteContext, IConfiguration configuration, ILogger<AuthHelper> logger, bool superadmin)
         {
             _siteContext = siteContext;
             _centralContext = centralContext;
             _configuration = configuration;
             this._logger = logger;
+            _superadmin = superadmin;
         }
 
         public string getTnumberLDAP(string username)
@@ -135,7 +127,7 @@ namespace src_api.Utilities
         public async Task<List<Response_Auth_Server_Data_DTO>> GetServerDataAsync()
         {
             var servers = new List<Response_Auth_Server_Data_DTO>();
-            var connectionString = $"{_configuration.GetConnectionString("CentralDB")}Connection Timeout=0;";
+            var connectionString = $"{_configuration.GetConnectionString("CentralDB")}";
 
             using (var connection = new SqlConnection(connectionString))
             {
@@ -143,7 +135,7 @@ namespace src_api.Utilities
                 {
                     await connection.OpenAsync();
 
-                    using (var command = new SqlCommand("SELECT * FROM dbo.Server_Data (NOLOCK)", connection))
+                    using (var command = new SqlCommand("SELECT * FROM dbo.Server_Data WITH(NOLOCK)", connection))
                     using (var reader = await command.ExecuteReaderAsync())
                     {
                         if (reader.HasRows)
@@ -164,11 +156,11 @@ namespace src_api.Utilities
                 }
                 catch (SqlException ex)
                 {
-                    Console.WriteLine($"Error en la conexión: {ex.Message}");
+                    _logger.LogError($"Connection error: {ex.Message}");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error: {ex.Message}");
+                    _logger.LogError($"Error: {ex.Message}");
                 }
             }
 
@@ -218,6 +210,10 @@ namespace src_api.Utilities
 
                     trimmedGroups = TrimStringsInList(groups);
 
+                    var admin = _configuration["SuperAdminGroup"];
+
+                    _superadmin = trimmedGroups.Contains(admin);
+
                     var serverGroups = await GetServerDataAsync();
 
                     var matchingKeys = serverGroups
@@ -245,15 +241,15 @@ namespace src_api.Utilities
             }
         }
 
-        public DTOs.User AuthorizeUser(string base64username, Response_Auth_Server_Data_DTO[] groups, string? serverid = null)
+        public DTOs.User AuthorizeUser(string base64username, Response_Auth_Server_Data_DTO[] groups, int serverid)
         {
             if (!string.IsNullOrEmpty(base64username) && groups != null)
             {
                 string token = null;
 
-                if (!string.IsNullOrEmpty(serverid))
+                if (serverid != 0)
                 {
-                    token = GenerateToken(serverid,groups);
+                    token = GenerateToken(base64username, serverid, groups);
                 }
 
                 List<string> siteList = new List<string>();
@@ -270,7 +266,7 @@ namespace src_api.Utilities
                 {
                     sites = sites,
                     token = token ?? "", 
-                    message = string.IsNullOrEmpty(serverid)
+                    message = serverid == 0
                         ? "You have access to more than one server. Please select one to continue."
                         : "Login successful."
                 };
@@ -284,34 +280,92 @@ namespace src_api.Utilities
                 throw new Exception("Username or groups were null");
             }
         }
-        //public Task<int> GetPPAUser()
-        //{
-        //    try
-        //    {
-        //        var dbClient = await _siteContext.setOnPremConnection(serverUrl);
-        //        var query = $@"
-        //    SELECT * 
-        //    FROM Users_Base
-        //    WHERE WindowsUserInfo LIKE '%\\{username}' AND Mixed_Mode_Login = 1;";
+        public async Task<int> GetPPAUser(string username, Response_Auth_Server_Data_DTO matchedServer)
+        {
+            try
+            {
+                _siteContext.setOnPremConnection(matchedServer.server);
+                _siteContext.Database.SetCommandTimeout(0);
+                var result = await _siteContext.Database.SqlQueryRaw<Users_Base>(
+                $@"
+                SELECT User_Id 
+                FROM Users_Base WITH(NOLOCK)
+                WHERE WindowsUserInfo LIKE '%\{username}' AND Mixed_Mode_Login = 1;"
+                ).ToListAsync();
 
-        //        var data = await dbClient.ExecuteQueryAsync(query);
+                _logger.LogInformation("PPAUserId: "+ result.First().User_ID);
+                
+                if (result != null)
+                {
+                    return result.First().User_ID;
+                }
+                else
+                {
+                    return -1; 
+                }
+            }
+            catch (SqlException ex)
+            {
+                _logger.LogError($"Connection error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"You don't have proper access to this server. Please check that your windows user is configured properly on the desired proficy server: {ex.Message}");
+                throw new Exception($"You don't have proper access to this server. Please check that your windows user is configured properly on the desired proficy server: {ex.Message}");
+            }
+            finally
+            {
+                _siteContext.Dispose();
+            }
+            return -1;
 
-        //        return data?.Count > 0 ? (int?)data[0]["User_Id"] : null;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Log(LOGIN, server.ServerId, username, new { message = ex.Message }, true);
-        //        throw new HttpException(500, ex.Message);
-        //    }
-        //}
+        }
+        public async Task<string> GetAspectingSite(string username, Response_Auth_Server_Data_DTO matchedServer)
+        {
+            try
+            {
+                _siteContext.setOnPremConnection(matchedServer.server);
+                _siteContext.Database.SetCommandTimeout(0);
+                var result = await _siteContext.Database.SqlQueryRaw<Site_Parameters>(
+                $@"
+                SELECT
+                [Aspecting] =
+                CASE
+                WHEN sp.value = '1' THEN 'ACTIVE'
+                ELSE 'NOT ACTIVE'
+                END
+                FROM dbo.Site_Parameters sp WITH(NOLOCK)
+                JOIN dbo.Parameters p WITH(NOLOCK) ON p.parm_id = sp.parm_id
+                WHERE p.parm_name LIKE 'UseProficyClient;"
+                ).ToListAsync();
 
-        private string GenerateToken(string serverid, Response_Auth_Server_Data_DTO[] groups)
+                _logger.LogInformation("Aspecting site: " + result);
+
+                return result.First().Aspecting;
+            }
+            catch (SqlException ex)
+            {
+                _logger.LogError($"Connection error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error: {ex.Message}");
+                throw new Exception($"Error: {ex.Message}");
+            }
+            finally
+            {
+                _siteContext.Dispose();
+            }
+            return "NOT ACTIVE";
+        }
+
+        private string GenerateToken(string base64username, int serverid, Response_Auth_Server_Data_DTO[] groups)
         {
             int expiration = Int32.Parse(_configuration["TokenExpirationHours"]);
             string? encodedSecret = _configuration["secret"];
+
             byte[] secretInBytes = System.Convert.FromBase64String(encodedSecret);
             string secret = Encoding.Unicode.GetString(ProtectedData.Unprotect(secretInBytes, null, DataProtectionScope.LocalMachine));
-
 
             string key = secret;
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
@@ -319,7 +373,13 @@ namespace src_api.Utilities
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var tokenExpiration = DateTime.UtcNow.AddHours(expiration);
-            //var ppauserid = GetPPAUser();
+
+            var matchedServer = groups.FirstOrDefault(g => g.serverId == serverid);
+            string username = Encoding.UTF8.GetString(Convert.FromBase64String(base64username));
+
+            var ppauserid = GetPPAUser(username, matchedServer);
+            var aspecting = GetAspectingSite(username, matchedServer);
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
 
@@ -327,10 +387,14 @@ namespace src_api.Utilities
                 SigningCredentials = credentials,
                 Subject = new ClaimsIdentity(new[]
                 {
-                new Claim(ClaimTypes.Role, "Administrator"),
-                new Claim("serverId", serverid),
-                new Claim("serverName","Test"),
-                new Claim("serverDB", "GBDB")
+                new Claim("username", username.ToString()),
+                new Claim("ppauserid", ppauserid.Result.ToString()),
+                new Claim("serverId", serverid.ToString()),
+                new Claim("serverName",matchedServer.serverName),
+                new Claim("server",matchedServer.server),
+                new Claim("serverDB", matchedServer.serverDB),
+                new Claim("superAdmin", _superadmin.ToString()),
+                new Claim("aspecting", aspecting.Result.ToString())
             })
             };
 
