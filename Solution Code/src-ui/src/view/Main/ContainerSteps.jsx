@@ -51,30 +51,6 @@ const ContainerSteps = ({ moduleUsed }) => {
 
     setVariablesRows([newVariable, ...variablesRows]);
     setCount(count + 1);
-
-    // const handleAddVariable = () => {
-    //   if (newVariable && selectedUnit && selectedGroup) {
-    //     const updatedData = data.map((unit) => {
-    //       if (unit.unit === selectedUnit) {
-    //         return {
-    //           ...unit,
-    //           groups: unit.groups.map((group) => {
-    //             if (group.group === selectedGroup) {
-    //               return {
-    //                 ...group,
-    //                 variables: [...group.variables, newVariable]
-    //               };
-    //             }
-    //             return group;
-    //           })
-    //         };
-    //       }
-    //       return unit;
-    //     });
-    //     setData(updatedData);
-    //     setNewVariable("");
-    //   }
-    // };
     
   };
 

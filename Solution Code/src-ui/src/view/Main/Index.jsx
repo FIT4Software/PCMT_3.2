@@ -5,12 +5,20 @@ import { IoLogOutOutline } from "react-icons/io5";
 import ContainerSteps from './ContainerSteps';
 import MainActions from './MainActions';
 import LineSelector from './LineSelector';
+import { useNavigate } from "react-router-dom"; 
+
 
 
 
 const Index = () => {
     const [lineselected, setLineselected] = useState(null);
     const [moduleUsed, setModuleUsed] = useState(0);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+      localStorage.removeItem("isAuthenticated");
+      navigate("/login");
+    };    
 
     return (
       <div className="flex flex-col h-full">
@@ -23,7 +31,7 @@ const Index = () => {
             <div className="flex items-center space-x-2">
               <FaUser />
               <h5 className="text-m font-semibold text-primary">Cami Olguin</h5>
-              <Button type="primary" icon={<IoLogOutOutline />} />
+              <Button type="primary" icon={<IoLogOutOutline />} onClick={handleLogout}/>
             </div>
           </div>
         </header>
