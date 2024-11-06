@@ -45,7 +45,7 @@ namespace src_api.Utilities
                 byte[] secretInBytes = Convert.FromBase64String(encodedSecret);
                 string secret = Encoding.Unicode.GetString(ProtectedData.Unprotect(secretInBytes, null, DataProtectionScope.LocalMachine));
 
-                if (jwtToken.Issuer == "FLSync")
+                if (jwtToken.Issuer == "PCMT")
                 {
                     validationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
                     validationParameters.ValidateAudience = false;

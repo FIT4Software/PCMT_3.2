@@ -280,72 +280,81 @@ namespace src_api.Utilities
                 throw new Exception("Username or groups were null");
             }
         }
-        public async Task<int> GetPPAUser(string username, Response_Auth_Server_Data_DTO matchedServer)
+        public int GetPPAUser(string username, Response_Auth_Server_Data_DTO matchedServer)
         {
             try
             {
                 _siteContext.setOnPremConnection(matchedServer.server);
-                _siteContext.Database.SetCommandTimeout(0);
-                var result = await _siteContext.Database.SqlQueryRaw<Users_Base>(
-                $@"
-                SELECT User_Id 
-                FROM Users_Base WITH(NOLOCK)
-                WHERE WindowsUserInfo LIKE '%\{username}' AND Mixed_Mode_Login = 1;"
-                ).ToListAsync();
 
-                _logger.LogInformation("PPAUserId: "+ result.First().User_ID);
-                
-                if (result != null)
+                var result = _siteContext.Database.SqlQueryRaw<Users_Base>(
+                    @"SELECT User_Id 
+                      FROM Users_Base WITH(NOLOCK) 
+                      WHERE WindowsUserInfo LIKE @Username AND Mixed_Mode_Login = 1",
+                    new SqlParameter("@Username", $"%\\{username}")
+                ).ToList(); 
+
+                if (result != null && result.Any())
                 {
-                    return result.First().User_ID;
+                    var userId = result.First().User_ID;
+                    _logger.LogInformation("PPAUserId: " + userId);
+                    return userId;
                 }
                 else
                 {
-                    return -1; 
+                    return -1;
                 }
             }
             catch (SqlException ex)
             {
                 _logger.LogError($"Connection error: {ex.Message}");
+                return -1;
             }
             catch (Exception ex)
             {
-                _logger.LogError($"You don't have proper access to this server. Please check that your windows user is configured properly on the desired proficy server: {ex.Message}");
-                throw new Exception($"You don't have proper access to this server. Please check that your windows user is configured properly on the desired proficy server: {ex.Message}");
+                var message = $"You don't have proper access to this server. Please check that your windows user is configured properly on the desired proficy server: {ex.Message}";
+                _logger.LogError(message);
+                throw new Exception(message);
             }
             finally
             {
-                _siteContext.Dispose();
+                _siteContext.Database.GetDbConnection().Close();
             }
-            return -1;
-
         }
-        public async Task<string> GetAspectingSite(string username, Response_Auth_Server_Data_DTO matchedServer)
+
+        public async Task<bool> GetAspectingSite(string username, Response_Auth_Server_Data_DTO matchedServer)
         {
             try
             {
                 _siteContext.setOnPremConnection(matchedServer.server);
-                _siteContext.Database.SetCommandTimeout(0);
+
                 var result = await _siteContext.Database.SqlQueryRaw<Site_Parameters>(
-                $@"
-                SELECT
-                [Aspecting] =
-                CASE
-                WHEN sp.value = '1' THEN 'ACTIVE'
-                ELSE 'NOT ACTIVE'
-                END
-                FROM dbo.Site_Parameters sp WITH(NOLOCK)
-                JOIN dbo.Parameters p WITH(NOLOCK) ON p.parm_id = sp.parm_id
-                WHERE p.parm_name LIKE 'UseProficyClient;"
+                    @"
+                    SELECT
+                    [Aspecting] =
+                    CASE
+                        WHEN sp.value = '1' THEN 'ACTIVE'
+                        ELSE 'NOT ACTIVE'
+                    END
+                    FROM dbo.Site_Parameters sp WITH(NOLOCK)
+                    JOIN dbo.Parameters p WITH(NOLOCK) ON p.parm_id = sp.parm_id
+                    WHERE p.parm_name LIKE 'UseProficyClient';"
                 ).ToListAsync();
 
-                _logger.LogInformation("Aspecting site: " + result);
-
-                return result.First().Aspecting;
+                if (result.Any() && result.First().Aspecting == "ACTIVE")
+                {
+                    _logger.LogInformation("Aspecting site: ACTIVE");
+                    return true;
+                }
+                else
+                {
+                    _logger.LogInformation("Aspecting site: NOT ACTIVE");
+                    return false;
+                }
             }
             catch (SqlException ex)
             {
                 _logger.LogError($"Connection error: {ex.Message}");
+                return false;
             }
             catch (Exception ex)
             {
@@ -354,9 +363,8 @@ namespace src_api.Utilities
             }
             finally
             {
-                _siteContext.Dispose();
+                _siteContext.Database.GetDbConnection().Close();
             }
-            return "NOT ACTIVE";
         }
 
         private string GenerateToken(string base64username, int serverid, Response_Auth_Server_Data_DTO[] groups)
@@ -388,7 +396,7 @@ namespace src_api.Utilities
                 Subject = new ClaimsIdentity(new[]
                 {
                 new Claim("username", username.ToString()),
-                new Claim("ppauserid", ppauserid.Result.ToString()),
+                new Claim("ppauserid", ppauserid.ToString()),
                 new Claim("serverId", serverid.ToString()),
                 new Claim("serverName",matchedServer.serverName),
                 new Claim("server",matchedServer.server),
