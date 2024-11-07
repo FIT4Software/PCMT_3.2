@@ -5,6 +5,7 @@ using Contexts;
 using System.ComponentModel.DataAnnotations;
 using src_api.Utilities;
 using DTOs;
+using src_api.Models;
 
 namespace src_api.Controllers;
 
@@ -27,10 +28,19 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("[action]")]
-    public async Task<IActionResult> Login([Required] string base64Username, [Required] string base64Password, int serverid)
+    public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         try
         {
+            string base64Username = loginRequest.Base64Username;
+            string base64Password = loginRequest.Base64Password;
+            int serverid = loginRequest.ServerId;
+
             if (serverid == 0)
             {
                 if (!string.IsNullOrEmpty(base64Username) && !string.IsNullOrEmpty(base64Password))
