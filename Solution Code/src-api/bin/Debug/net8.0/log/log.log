@@ -1,0 +1,820 @@
+2024-10-29 15:29:56,986 [1] ERROR Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor - An exception occurred while trying to decrypt the element.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2024-10-29 15:29:57,053 [1] ERROR Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - An exception occurred while processing the key element '<key id="b3b915bf-e594-484f-b0a3-43d5afb3e410" version="1" />'.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2024-10-29 15:29:57,136 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {b3b915bf-e594-484f-b0a3-43d5afb3e410} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-10-29 15:29:57,183 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {b3b915bf-e594-484f-b0a3-43d5afb3e410} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-10-29 15:29:57,651 [1] WARN Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer - The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+ 2024-10-29 15:29:57,800 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: https://localhost:7144
+ 2024-10-29 15:29:57,807 [1] INFO Microsoft.Hosting.Lifetime - Now listening on: http://localhost:5042
+ 2024-10-29 15:29:58,162 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:29:58,170 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:29:58,177 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 15:33:04,845 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:33:05,011 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:33:05,042 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 15:35:58,008 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:35:58,074 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:35:58,081 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 15:39:22,485 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:39:22,537 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:39:22,547 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 15:40:40,113 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:40:40,370 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:40:40,376 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 15:43:30,003 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:43:30,066 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:43:30,073 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 15:44:22,335 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:44:22,384 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:44:22,391 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 15:47:04,250 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:47:04,292 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:47:04,297 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 15:48:28,568 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 15:48:28,629 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 15:48:28,638 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:05:01,851 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 16:05:01,887 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 16:05:01,894 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:07:07,880 [3] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'DTOs.IAuthHelper' while attempting to activate 'src_api.Controllers.AuthController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method3(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Program.<>c.<<<Main>$>b__0_3>d.MoveNext() in C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api\Program.cs:line 98
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-29 16:09:31,924 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 16:09:31,959 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 16:09:31,964 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:10:20,054 [5] ERROR Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware - An unhandled exception has occurred while executing the request.
+ System.InvalidOperationException: Unable to resolve service for type 'src_api.Utilities.IAuthHelper' while attempting to activate 'src_api.Controllers.AuthController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method3(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Program.<>c.<<<Main>$>b__0_3>d.MoveNext() in C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api\Program.cs:line 98
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-10-29 16:11:47,988 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 16:11:48,050 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 16:11:48,054 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:13:41,956 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 16:13:42,039 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 16:13:42,048 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:19:22,754 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 16:19:22,809 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 16:19:22,817 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:24:48,610 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 16:24:48,651 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 16:24:48,657 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:24:56,456 [5] ERROR src_api.Utilities.AuthorizationMiddleware - Authorization header is missing.
+ 2024-10-29 16:24:56,598 [5] ERROR src_api.Utilities.AuthorizationMiddleware - IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+ 2024-10-29 16:25:43,488 [5] ERROR src_api.Utilities.AuthorizationMiddleware - IDX12741: JWT must have three segments (JWS) or five segments (JWE).
+ 2024-10-29 16:27:48,976 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 16:27:49,041 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 16:27:49,048 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:36:39,108 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 16:36:39,169 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 16:36:39,178 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-29 16:37:29,486 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-29 16:37:29,509 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-29 16:37:30,246 [9] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-29 16:37:31,178 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-29 16:37:31,187 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-29 16:37:32,105 [9] INFO src_api.Utilities.AuthHelper - Success StringtoList 45
+ 2024-10-29 16:37:32,119 [9] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-29 16:37:32,393 [9] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MzAyMzA2NTIsImV4cCI6MTczMDI3Mzg1MiwiaWF0IjoxNzMwMjMwNjUyLCJpc3MiOiJGTFN5bmMiLCJhdWQiOiJGTFN5bmMgVXNlciJ9.mppgK_w1WAXD4DsKP4gLjhPc-LQX60F4GIxWgSIr4pg
+ 2024-10-29 16:37:37,170 [9] INFO src_api.Utilities.AuthHelper - Success Authorize Usergarcia.sg.5
+ 2024-10-29 16:37:37,178 [9] INFO src_api.Controllers.AuthController - Success LoginDTOs.User
+ 2024-10-29 17:03:16,484 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-29 17:03:16,578 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-29 17:03:16,586 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 15:12:35,850 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 15:12:35,877 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 15:12:35,884 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 15:22:27,737 [15] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:22:27,762 [15] INFO src_api.Utilities.AuthHelper - TNumberDM9274
+ 2024-10-30 15:22:28,486 [15] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 15:22:29,388 [15] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:22:29,392 [15] INFO src_api.Utilities.AuthHelper - TNumberDM9274
+ 2024-10-30 15:22:30,291 [15] INFO src_api.Utilities.AuthHelper - Success StringtoList 71
+ 2024-10-30 15:22:30,313 [15] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 15:22:30,358 [15] ERROR src_api.Controllers.AuthController - Failed login attempt - user does not have access to FLSync
+ 2024-10-30 15:23:38,066 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:23:38,076 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:23:38,801 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 15:23:39,697 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:23:39,705 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:23:40,607 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 15:23:40,613 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 15:23:40,981 [5] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MzAzMTI2MjAsImV4cCI6MTczMDM1NTgyMCwiaWF0IjoxNzMwMzEyNjIwLCJpc3MiOiJGTFN5bmMiLCJhdWQiOiJGTFN5bmMgVXNlciJ9.-olTdARTm8H5pej543iFrSHrt4VZUJmkqqetX3E8YsM
+ 2024-10-30 15:23:40,987 [5] INFO src_api.Utilities.AuthHelper - Success Authorize Usergarcia.sg.5
+ 2024-10-30 15:23:40,993 [5] INFO src_api.Controllers.AuthController - Success Login: DTOs.User
+ 2024-10-30 15:26:10,218 [15] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:26:10,224 [15] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:26:10,942 [15] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 15:26:13,328 [15] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:26:13,335 [15] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:26:14,240 [15] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 15:26:14,249 [15] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 15:26:15,772 [15] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MzAzMTI3NzUsImV4cCI6MTczMDM1NTk3NSwiaWF0IjoxNzMwMzEyNzc1LCJpc3MiOiJGTFN5bmMiLCJhdWQiOiJGTFN5bmMgVXNlciJ9.6CPKghLfTO0J-nxPeJJ8MpwEuVKH7vKTRssWYrJ74bo
+ 2024-10-30 15:26:15,779 [15] INFO src_api.Utilities.AuthHelper - Success Authorize Usergarcia.sg.5
+ 2024-10-30 15:26:15,787 [15] INFO src_api.Controllers.AuthController - Success Login: DTOs.User
+ 2024-10-30 15:37:07,860 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 15:37:07,916 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 15:37:07,930 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 15:38:11,620 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:38:11,663 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:38:12,393 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 15:38:13,302 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:38:13,309 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:38:14,226 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 15:38:14,245 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 15:38:14,611 [5] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MzAzMTM0OTQsImV4cCI6MTczMDM1NjY5NCwiaWF0IjoxNzMwMzEzNDk0LCJpc3MiOiJGTFN5bmMiLCJhdWQiOiJGTFN5bmMgVXNlciJ9.ldx8N5t4qZwXe3YFobL6gaDYOlpC20hkvucBpusxBEc
+ 2024-10-30 15:38:14,617 [5] INFO src_api.Utilities.AuthHelper - Success Authorize Usergarcia.sg.5
+ 2024-10-30 15:38:14,624 [5] INFO src_api.Controllers.AuthController - Success LoginDTOs.User
+ 2024-10-30 15:44:32,656 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 15:44:32,699 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 15:44:32,716 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 15:45:02,700 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:45:02,713 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:45:03,433 [9] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 15:45:04,359 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:45:04,365 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:45:05,275 [9] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 15:45:05,290 [9] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 15:45:05,601 [9] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MzAzMTM5MDUsImV4cCI6MTczMDM1NzEwNSwiaWF0IjoxNzMwMzEzOTA1LCJpc3MiOiJGTFN5bmMiLCJhdWQiOiJGTFN5bmMgVXNlciJ9.3xZbXfPuU4PfD834cstX_qBfwXD6-tc5eEw_pPunoRE
+ 2024-10-30 15:45:05,609 [9] INFO src_api.Utilities.AuthHelper - Success Authorize Usergarcia.sg.5
+ 2024-10-30 15:45:05,616 [9] INFO src_api.Controllers.AuthController - Success LoginDTOs.User
+ 2024-10-30 15:47:16,060 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 15:47:16,101 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 15:47:16,107 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 15:47:34,313 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:47:34,324 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:47:35,048 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 15:47:35,968 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:47:35,976 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:47:36,882 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 15:47:36,901 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 15:47:37,219 [5] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MzAzMTQwNTcsImV4cCI6MTczMDM1NzI1NiwiaWF0IjoxNzMwMzE0MDU3LCJpc3MiOiJGTFN5bmMiLCJhdWQiOiJGTFN5bmMgVXNlciJ9.LeEunsVEygJtmE2L8EeV0nNF7FtQwv3dPd7_Rpi1HOE
+ 2024-10-30 15:47:37,224 [5] INFO src_api.Utilities.AuthHelper - Success Authorize Usergarcia.sg.5
+ 2024-10-30 15:47:37,229 [5] INFO src_api.Controllers.AuthController - Success LoginDTOs.User
+ 2024-10-30 15:51:24,411 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 15:51:24,458 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 15:51:24,467 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 15:51:41,422 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:51:41,437 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:51:42,155 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 15:51:43,065 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 15:51:43,071 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 15:51:43,981 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 15:51:44,002 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 15:51:44,348 [5] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE3MzAzMTQzMDQsImV4cCI6MTczMDM1NzUwNCwiaWF0IjoxNzMwMzE0MzA0LCJpc3MiOiJGTFN5bmMiLCJhdWQiOiJGTFN5bmMgVXNlciJ9.uRS4lyE778OnIrIYeYit29bKDgD3KWbJqlNIgRPQGa8
+ 2024-10-30 15:51:44,355 [5] INFO src_api.Utilities.AuthHelper - Success Authorize Usergarcia.sg.5
+ 2024-10-30 15:51:44,362 [5] INFO src_api.Controllers.AuthController - Success Login: DTOs.User
+ 2024-10-30 16:43:58,915 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 16:43:58,957 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 16:43:58,964 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 16:44:29,781 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 16:44:29,797 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 16:44:30,544 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 16:44:31,448 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 16:44:31,455 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 16:44:32,364 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 16:44:32,378 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 16:44:32,385 [5] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-30 16:44:32,390 [5] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-30 16:44:32,521 [5] ERROR src_api.Controllers.AuthController - Error during login: Session has not been configured for this application or request.
+ 2024-10-30 16:44:44,917 [20] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 16:44:44,923 [20] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 16:44:45,664 [20] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 16:44:47,855 [20] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 16:44:47,867 [20] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 16:44:48,778 [20] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 16:44:48,784 [20] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 16:44:50,847 [20] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-30 16:44:56,317 [20] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-30 16:45:44,109 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 16:45:44,139 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 16:45:44,148 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 16:45:58,038 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 16:45:58,053 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 16:45:58,774 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 16:45:59,677 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 16:45:59,685 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 16:46:00,588 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 16:46:00,606 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 16:46:00,613 [5] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-30 16:46:00,620 [5] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-30 16:50:52,484 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 16:50:52,570 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 16:50:52,575 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 16:52:37,324 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 16:52:37,339 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 16:52:38,071 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 16:52:38,990 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 16:52:38,999 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 16:52:39,905 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 16:52:39,926 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 16:52:39,937 [5] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-30 16:52:39,944 [5] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-30 16:52:54,429 [9] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJzZXJ2ZXJOYW1lIjoiNSIsIm5iZiI6MTczMDMxNzk3NCwiZXhwIjoxNzMwMzYxMTc0LCJpYXQiOjE3MzAzMTc5NzQsImlzcyI6IkZMU3luYyIsImF1ZCI6IkZMU3luYyBVc2VyIn0.xCyzAQwlBa2h8mdMEexB1LQAp46T_L9HjRZhgu1N9MQ
+ 2024-10-30 16:52:54,436 [9] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-30 16:52:54,443 [9] INFO src_api.Controllers.AuthController - Token generated for server ID: 5
+ 2024-10-30 17:00:16,460 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 17:00:16,505 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 17:00:16,525 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 17:03:12,750 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 17:03:12,771 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 17:03:13,503 [3] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 17:03:14,439 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 17:03:14,447 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 17:03:15,349 [3] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-30 17:03:15,368 [3] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-30 17:04:35,758 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-30 17:04:35,828 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-30 17:04:35,836 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-30 17:04:52,185 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 17:04:52,199 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 17:04:52,919 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-30 17:04:53,839 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-30 17:04:53,848 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-30 17:05:30,894 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:19:56,876 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 15:19:56,910 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 15:19:56,915 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 15:20:48,051 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:20:48,061 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:20:48,769 [3] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:20:49,815 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:20:49,820 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:20:50,741 [3] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:21:27,891 [3] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 15:21:30,180 [3] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 15:21:30,190 [3] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 15:21:37,820 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:21:37,826 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:21:38,532 [3] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:21:39,404 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:21:39,410 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:21:40,344 [3] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:21:44,986 [3] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 15:21:51,051 [3] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 15:21:51,063 [3] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 15:22:01,374 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:22:01,380 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:22:02,084 [3] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:22:02,963 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:22:02,995 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:22:03,895 [3] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:22:07,523 [3] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 15:22:11,445 [3] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 15:22:11,808 [3] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 15:22:19,984 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:22:19,989 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:22:20,695 [3] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:22:21,602 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:22:21,606 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:22:22,487 [3] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:22:52,169 [3] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 15:22:57,907 [3] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 15:22:57,922 [3] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 15:23:00,598 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:23:00,605 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:23:01,310 [3] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:23:02,193 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:23:02,198 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:23:03,098 [3] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:25:13,066 [3] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 15:25:14,301 [3] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 15:25:14,311 [3] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 15:27:12,960 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 15:27:12,986 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 15:27:12,993 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 15:28:28,353 [17] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:28:28,361 [17] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:28:29,075 [17] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:28:29,956 [17] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:28:29,960 [17] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:28:30,850 [17] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:29:00,530 [17] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 15:29:08,723 [17] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 15:29:08,727 [17] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 15:36:52,772 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 15:36:52,805 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 15:36:52,813 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 15:37:08,682 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:37:08,691 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:37:09,398 [9] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:37:10,298 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:37:10,303 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:37:11,181 [9] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:40:19,323 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 15:40:19,346 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 15:40:19,354 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 15:40:28,102 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:40:28,112 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:40:28,817 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:40:29,715 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:40:29,721 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:40:30,603 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:42:01,508 [1] ERROR Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor - An exception occurred while trying to decrypt the element.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2024-10-31 15:42:01,624 [1] ERROR Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - An exception occurred while processing the key element '<key id="30f47b1b-26e4-45d6-a296-2e7329bad84d" version="1" />'.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2024-10-31 15:42:01,761 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {30f47b1b-26e4-45d6-a296-2e7329bad84d} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-10-31 15:42:01,827 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {30f47b1b-26e4-45d6-a296-2e7329bad84d} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-10-31 15:42:01,918 [1] ERROR Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor - An exception occurred while trying to decrypt the element.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2024-10-31 15:42:01,975 [1] ERROR Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - An exception occurred while processing the key element '<key id="b3b915bf-e594-484f-b0a3-43d5afb3e410" version="1" />'.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2024-10-31 15:42:02,121 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {b3b915bf-e594-484f-b0a3-43d5afb3e410} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-10-31 15:42:02,201 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {b3b915bf-e594-484f-b0a3-43d5afb3e410} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-10-31 15:42:02,333 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {30f47b1b-26e4-45d6-a296-2e7329bad84d} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-10-31 15:42:03,326 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 15:42:03,333 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 15:42:03,341 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 15:42:25,042 [7] ERROR Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor - An exception occurred while trying to decrypt the element.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2024-10-31 15:42:25,087 [7] ERROR Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - An exception occurred while processing the key element '<key id="30f47b1b-26e4-45d6-a296-2e7329bad84d" version="1" />'.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2024-10-31 15:42:25,172 [7] WARN Microsoft.AspNetCore.Session.SessionMiddleware - Error unprotecting the session cookie.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRing.KeyHolder.GetEncryptorInstance(Boolean& isRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRing.GetAuthenticatedEncryptorByKeyId(Guid keyId, Boolean& isRevoked)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+2024-10-31 15:42:26,975 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:42:26,981 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:42:27,695 [7] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:42:28,606 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:42:28,612 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:42:29,511 [7] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:42:43,572 [7] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 15:44:49,651 [1] ERROR Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor - An exception occurred while trying to decrypt the element.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2024-10-31 15:44:49,718 [1] ERROR Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - An exception occurred while processing the key element '<key id="444f64dd-2076-4d77-a2d5-121ce3af6587" version="1" />'.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2024-10-31 15:44:49,792 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {444f64dd-2076-4d77-a2d5-121ce3af6587} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-10-31 15:44:50,445 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 15:44:50,452 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 15:44:50,459 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 15:45:12,921 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:45:12,934 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:45:13,637 [7] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 15:45:14,547 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 15:45:14,552 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 15:45:15,435 [7] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 15:45:30,468 [7] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 15:45:51,084 [7] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 15:45:51,091 [7] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 15:45:59,216 [7] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJzZXJ2ZXJJZCI6IjY2NSIsInNlcnZlck5hbWUiOiJUZXN0Iiwic2VydmVyREIiOiJHQkRCIiwibmJmIjoxNzMwNDAwMzU5LCJleHAiOjE3MzA0NDM1NTgsImlhdCI6MTczMDQwMDM1OSwiaXNzIjoiRkxTeW5jIiwiYXVkIjoiRkxTeW5jIFVzZXIifQ.n2mLhtKiwctgwmgVNKYERO1noIgFGl2oeAnwg9Jv8UI
+ 2024-10-31 15:45:59,221 [7] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 15:45:59,228 [7] INFO src_api.Controllers.AuthController - Token generated for server ID: 665
+ 2024-10-31 16:02:31,121 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:02:31,188 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:02:31,204 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:02:48,722 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:02:48,732 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:02:49,445 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:02:50,325 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:02:50,330 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:02:51,204 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:04:18,122 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:04:18,173 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:04:18,183 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:04:48,248 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:04:48,257 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:04:48,971 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:04:49,865 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:04:49,869 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:04:50,758 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:06:22,902 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:06:22,927 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:06:22,931 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:07:44,988 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:07:45,030 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:07:45,038 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:07:55,216 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:07:55,226 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:07:55,929 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:07:56,828 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:07:56,834 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:07:57,710 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:08:21,963 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:08:54,228 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:08:54,270 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:08:54,275 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:09:07,711 [11] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:09:07,720 [11] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:09:08,421 [11] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:09:09,322 [11] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:09:09,327 [11] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:09:10,217 [11] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:11:26,026 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:11:26,089 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:11:26,094 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:11:36,019 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:11:36,029 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:11:36,762 [9] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:11:37,667 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:11:37,673 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:11:38,567 [9] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:11:51,635 [9] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:11:53,264 [9] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 16:11:53,270 [9] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 16:13:23,172 [24] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:13:23,177 [24] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:13:23,899 [24] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:13:24,778 [24] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:13:24,782 [24] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:13:25,663 [24] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:13:46,342 [24] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:13:48,874 [24] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 16:13:48,880 [24] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 16:13:53,636 [24] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:13:53,640 [24] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:13:54,348 [24] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:13:55,230 [24] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:13:55,235 [24] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:13:56,114 [24] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:14:27,236 [24] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:15:16,199 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:15:16,227 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:15:16,239 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:15:33,327 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:15:33,336 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:15:34,052 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:15:34,946 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:15:34,951 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:15:35,835 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:15:36,979 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:15:39,185 [5] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 16:15:39,193 [5] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 16:16:52,810 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:16:52,837 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:16:52,841 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:17:06,179 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:17:06,187 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:17:06,891 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:17:07,790 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:17:07,795 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:17:08,668 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:17:15,544 [5] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:17:19,766 [5] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 16:17:20,263 [5] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 16:18:07,117 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:18:07,123 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:18:07,833 [7] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:18:08,728 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:18:08,738 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:18:09,906 [7] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:18:13,806 [7] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:18:16,683 [7] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 16:18:19,891 [7] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 16:18:38,030 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:18:38,036 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:18:38,736 [7] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:18:39,614 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:18:39,619 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:18:40,503 [7] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:18:47,598 [7] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:21:10,060 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:21:10,084 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:21:10,090 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:21:23,791 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:21:23,801 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:21:24,501 [7] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:21:25,426 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:21:25,431 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:21:26,306 [7] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:21:34,245 [7] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:21:36,903 [7] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 16:21:36,909 [7] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 16:24:27,716 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:24:27,946 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:24:27,957 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:24:45,075 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:24:45,084 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:24:45,801 [7] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:24:46,691 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:24:46,696 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:24:47,595 [7] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:24:54,421 [7] INFO src_api.Utilities.AuthHelper - Success Getting Access GroupsSystem.String[]
+ 2024-10-31 16:24:55,447 [7] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 16:24:55,452 [7] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-10-31 16:47:12,308 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:47:12,333 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:47:12,338 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:48:22,630 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:48:22,644 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:48:23,347 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:48:24,226 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:48:24,232 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:48:25,124 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:49:25,361 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:49:25,396 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:49:25,402 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:49:47,598 [10] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:49:47,607 [10] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:49:48,319 [10] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:49:49,200 [10] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:49:49,204 [10] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:49:50,116 [10] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:54:55,220 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:54:55,262 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:54:55,267 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:55:07,499 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:55:07,509 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:55:08,211 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:55:09,119 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:55:09,126 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:55:10,007 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:56:21,580 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:56:21,613 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:56:21,620 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:56:31,938 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:56:31,950 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:56:32,659 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:56:33,560 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:56:33,567 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:56:34,449 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:57:16,727 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:57:16,755 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:57:16,817 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 16:57:29,147 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:57:29,156 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:57:29,910 [5] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 16:57:30,792 [5] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 16:57:30,797 [5] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 16:57:31,683 [5] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 16:59:48,215 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-10-31 16:59:48,256 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-10-31 16:59:48,303 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-10-31 17:00:35,191 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 17:00:35,200 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 17:00:35,927 [9] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-10-31 17:00:36,814 [9] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-10-31 17:00:36,821 [9] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-10-31 17:00:37,743 [9] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-10-31 17:00:46,128 [9] INFO src_api.Utilities.AuthHelper - Success Getting Access Groups: Mehoopany Training Server, NPL-DEV-DTA, LON-PROFQ-DATA, WAR-PROFQ-DATA, BELL-PROFQ-DATA, MTEP-PROFQ-DATA, AKA-PROFQ-DATA, RA-PROFQ-DATA, Ahmedabad Training Server, Xiqing Trainig Server, Lab Unallocated Training Server, Huangpu Beauty Training Server, Bangkok Training Server, Hyderabad Training Server, Shanghai Training Server, Tepeji Training Server, Box Elder Training Server, Goa PHC Training Server, Targowek Training Server, Goa Training Server, Bhiwadi (STPMC) Training Server, Karachi Training Server, Cruzeiro do Sul Training Server, Crailsheim Training Server	, Box Elder Training Server
+ 2024-10-31 17:01:20,880 [9] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-10-31 17:01:21,305 [9] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-11-01 14:48:51,446 [1] ERROR Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor - An exception occurred while trying to decrypt the element.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2024-11-01 14:48:51,607 [1] ERROR Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - An exception occurred while processing the key element '<key id="aa5a00ab-4b6c-4ed9-9b37-8e69698082d5" version="1" />'.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2024-11-01 14:48:51,730 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {aa5a00ab-4b6c-4ed9-9b37-8e69698082d5} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-11-01 14:48:51,834 [1] ERROR Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor - An exception occurred while trying to decrypt the element.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+2024-11-01 14:48:51,890 [1] ERROR Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager - An exception occurred while processing the key element '<key id="30f47b1b-26e4-45d6-a296-2e7329bad84d" version="1" />'.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+2024-11-01 14:48:51,989 [1] WARN Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver - Key {30f47b1b-26e4-45d6-a296-2e7329bad84d} is ineligible to be the default key because its CreateEncryptor method failed.
+ System.Security.Cryptography.CryptographicException: Error occurred during a cryptographic operation.
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapiCore(Byte* pbProtectedData, UInt32 cbProtectedData, Byte* pbOptionalEntropy, UInt32 cbOptionalEntropy)
+   at Microsoft.AspNetCore.DataProtection.Cng.DpapiSecretSerializerHelper.UnprotectWithDpapi(Byte[] protectedSecret)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor.Decrypt(XElement encryptedElement)
+   at Microsoft.AspNetCore.DataProtection.XmlEncryption.XmlEncryptionExtensions.DecryptElement(XElement element, IActivator activator)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager.Microsoft.AspNetCore.DataProtection.KeyManagement.Internal.IInternalXmlKeyManager.DeserializeDescriptorFromKeyElement(XElement keyElement)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory.CreateEncryptorInstance(IKey key)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyBase.CreateEncryptor()
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver.CanCreateAuthenticatedEncryptor(IKey key)
+2024-11-01 14:48:52,758 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-11-01 14:48:52,773 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-11-01 14:48:52,783 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-11-01 14:51:53,103 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-11-01 14:51:53,115 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-11-01 14:51:53,839 [3] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-11-01 14:51:54,740 [3] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-11-01 14:51:54,746 [3] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-11-01 14:51:55,652 [3] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-11-01 14:56:45,724 [28] INFO src_api.Utilities.AuthHelper - Success Getting Access Groups: Mehoopany Training Server, NPL-DEV-DTA, LON-PROFQ-DATA, WAR-PROFQ-DATA, BELL-PROFQ-DATA, MTEP-PROFQ-DATA, AKA-PROFQ-DATA, RA-PROFQ-DATA, Ahmedabad Training Server, Xiqing Trainig Server, Lab Unallocated Training Server, Huangpu Beauty Training Server, Bangkok Training Server, Hyderabad Training Server, Shanghai Training Server, Tepeji Training Server, Box Elder Training Server, Goa PHC Training Server, Targowek Training Server, Goa Training Server, Bhiwadi (STPMC) Training Server, Karachi Training Server, Cruzeiro do Sul Training Server, Crailsheim Training Server	, Box Elder Training Server
+ 2024-11-01 14:57:44,139 [28] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-11-01 14:57:44,147 [28] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-11-01 15:00:12,605 [14] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImdhcmNpYS5zZy41Iiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJzZXJ2ZXJJZCI6IjUwIiwic2VydmVyTmFtZSI6IlRlc3QiLCJzZXJ2ZXJEQiI6IkdCREIiLCJuYmYiOjE3MzA0ODQwMTIsImV4cCI6MTczMDUyNzIxMiwiaWF0IjoxNzMwNDg0MDEyLCJpc3MiOiJGTFN5bmMiLCJhdWQiOiJGTFN5bmMgVXNlciJ9.DRmM6mqzwBuDB1bisNhQiUekoUC4eAx_xwLka7OpBqs
+ 2024-11-01 15:00:12,614 [14] INFO src_api.Utilities.AuthHelper - Authorization successful for user: garcia.sg.5
+ 2024-11-01 15:00:12,622 [14] INFO src_api.Controllers.AuthController - Token generated for server ID: 50
+ 2024-11-01 15:42:11,058 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-11-01 15:42:11,111 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-11-01 15:42:11,118 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-11-01 15:49:32,803 [15] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-11-01 15:49:32,821 [15] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-11-01 15:49:33,558 [15] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-11-01 15:49:34,553 [15] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-11-01 15:49:34,561 [15] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-11-01 15:50:51,496 [15] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-11-01 15:52:48,679 [1] INFO Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+ 2024-11-01 15:52:48,751 [1] INFO Microsoft.Hosting.Lifetime - Hosting environment: Development
+ 2024-11-01 15:52:48,760 [1] INFO Microsoft.Hosting.Lifetime - Content root path: C:\Users\Santiago Garcia\Desktop\Web_PCMT-NetCore-Backend_Final\Solution Code\src-api
+ 2024-11-01 15:53:43,988 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-11-01 15:53:44,006 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-11-01 15:53:44,742 [7] INFO src_api.Utilities.AuthHelper - Success Login & access
+ 2024-11-01 15:53:45,667 [7] INFO src_api.Utilities.AuthHelper - Successfully obtained Tnumber
+ 2024-11-01 15:53:45,675 [7] INFO src_api.Utilities.AuthHelper - TNumberEN0126
+ 2024-11-01 15:53:46,594 [7] INFO src_api.Utilities.AuthHelper - Success StringtoList 46
+ 2024-11-01 15:53:48,532 [7] INFO src_api.Utilities.AuthHelper - Success Getting Access Groups: Mehoopany Training Server, NPL-DEV-DTA, LON-PROFQ-DATA, WAR-PROFQ-DATA, BELL-PROFQ-DATA, MTEP-PROFQ-DATA, AKA-PROFQ-DATA, RA-PROFQ-DATA, Ahmedabad Training Server, Xiqing Trainig Server, Lab Unallocated Training Server, Huangpu Beauty Training Server, Bangkok Training Server, Hyderabad Training Server, Shanghai Training Server, Tepeji Training Server, Box Elder Training Server, Goa PHC Training Server, Targowek Training Server, Goa Training Server, Bhiwadi (STPMC) Training Server, Karachi Training Server, Cruzeiro do Sul Training Server, Crailsheim Training Server	, Box Elder Training Server
+ 2024-11-01 15:54:27,386 [7] INFO src_api.Utilities.AuthHelper - Authorization successful for user
+ 2024-11-01 15:54:29,721 [7] INFO src_api.Controllers.AuthController - Authorization success: DTOs.User
+ 2024-11-01 15:55:58,045 [3] INFO src_api.Utilities.AuthHelper - Success TokeneyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQWRtaW5pc3RyYXRvciIsInNlcnZlcklkIjoiMzciLCJzZXJ2ZXJOYW1lIjoiVGVzdCIsInNlcnZlckRCIjoiR0JEQiIsIm5iZiI6MTczMDQ4NzM1NywiZXhwIjoxNzMwNTMwNTU3LCJpYXQiOjE3MzA0ODczNTd9.OFfkiJpCU31mizMwHun9BNLWrAFfzW6Vb7YI_eSV5Ao
+ 2024-11-01 15:55:58,052 [3] INFO src_api.Utilities.AuthHelper - Authorization successful for user
+ 2024-11-01 15:55:58,057 [3] INFO src_api.Controllers.AuthController - Token generated for server ID: 37
+ 
